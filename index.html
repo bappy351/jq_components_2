@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <!--Meta tags Starts-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Meta tags Ends-->
+
+
+    <!--Links Starts-->
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <!--Links ends-->
+
+
+    <!--Title-->
+    <title>Jquery</title>
+
+</head>
+
+<body style="background-color:salmon;margin-bottom: 400px;">
+
+
+
+    <!--My code starts from here-->
+    <button class="slide_button btn">Dubble click</button>
+    <p class="slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dignissimos possimus voluptas vitae ex, corporis eaque. Ea autem alias obcaecati mollitia doloremque provident ipsum adipisci, dolor dolorum delectus deleniti culpa molestiae sed voluptate ratione numquam! Ipsa fuga, laborum inventore aperiam, veniam ex nihil adipisci sed nostrum voluptatum at explicabo dicta!</p>
+
+
+
+
+    <h1 class="hide_show">Press the button to Hide and Unhide this text.</h1>
+    <button class="hs_button btn">Hide/Show</button><br><br>
+
+
+
+    <img class="fadein_out" src="images/legion.jpg" alt="image" style="height: 350px;
+    width: 600px;"><br><br>
+    <button class="fio_button btn">Fadein/Out</button><br><br>
+
+
+    <button class="animation_button btn" style="margin-right: 50px;">See Animation</button>
+    <button class="stop_button btn">Stop animation</button> <br><br>
+    <div class="animation" style="
+    background:#98bf21;
+    height:100px;
+    width:100px;
+    position:absolute;">
+    </div>
+
+
+
+
+
+
+    <!--My code ends here-->
+
+
+
+
+
+
+    <!--Scripts starts-->
+    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+            $(".hs_button").click(function() {
+                $(".hide_show").toggle("slow", function() {
+                    alert("The section is in effect");
+                });
+            });
+        });
+        
+        
+        $(function() {
+            $(".fio_button").click(function() {
+                $(".fadein_out").fadeToggle("slow", function() {
+                    alert("The section is in effect");
+                });
+            });
+        });
+
+        $(function() {
+            $(".fadein_out").mouseenter(function() {
+                $(".fadein_out").fadeTo(5000, 0.7);
+            });
+        });
+
+
+        $(function() {
+            $(".animation_button").click(function() {
+                var animation = $(".animation");
+                animation.animate({
+                    height: '300px',
+                    opacity: '0.4',
+                }, 5000);
+                animation.animate({
+                    width: '300px',
+                    opacity: '0.8',
+                }, 5000);
+                animation.animate({
+                    height: '100px',
+                    opacity: '0.4'
+                }, 5000);
+                animation.animate({
+                    width: '100px',
+                    opacity: '0.8'
+                }, 5000);
+            });
+
+            $(".stop_button").click(function() {
+                $(".animation").stop();
+            });
+        });
+        
+        
+        
+         $(function() {
+            $(".slide_button").dblclick(function() {
+                $(".slide").css("color", "green").slideToggle(1000);
+            });
+        });
+    </script>
+
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!--Scripts ends-->
+
+
+
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function() {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+
+
+
+</body>
+
+</html>
